@@ -5,7 +5,7 @@ import (
 )
 
 var y = 42
-var z = `Sou uma variável "string"` //Crase podemos usanar quando queremos``
+var z = `Sou uma variável "string"` //Crase podemos usar quando queremos``
 var a = `Berg disse
 		"sou uma
 Variável String"`
