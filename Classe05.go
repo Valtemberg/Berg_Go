@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 var y = 42
-var z = "Sou uma variável strin"
+var z = "Sou uma variável string"
 
 func main() {
 	fmt.Println(y)        //ln = Line

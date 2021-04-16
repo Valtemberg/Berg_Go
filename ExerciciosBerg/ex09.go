@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 // Você possui uma turma com 4 alunos cujos nomes são Pedro, Ricardo, Paula e Marcia.
@@ -14,26 +15,16 @@ import (
 
 // a. Crie uma variável que receba o nome de cada aluno. Estas variáveis devem possuir escopo geral.
 
-var aluno01 string
-var aluno02 string
-var aluno03 string
-var aluno04 string
-var m1 bool
-var m2 bool
-var m3 bool
-var m4 bool
-
-var diplomas string
-
-//var diploma02 string
-//var diploma03 string
-//var diploma04 string
+var aluno01 string = "Pedro"
+var aluno02 string = "Ricardo"
+var aluno03 string = "Paula"
+var aluno04 string = "Marcia"
+var media01 float64
+var media02 float64
+var media03 float64
+var media04 float64
 
 func main() {
-	aluno01 = "Pedro"
-	aluno02 = "Ricardo"
-	aluno03 = "Paula"
-	aluno04 = "Marcia"
 
 	// b. Para cada nota de cada aluno, crie uma variável. Estas variáveis de nota precisam ser com escopo de função.
 
@@ -53,6 +44,11 @@ func main() {
 	aluno04n2 := 5.9
 	aluno04n3 := 7.6
 
+	media01 = (aluno01n1 + aluno01n2 + aluno01n3) / 3
+	media02 = (aluno02n1 + aluno02n2 + aluno02n3) / 3
+	media03 = (aluno03n1 + aluno03n2 + aluno03n3) / 3
+	media04 = (aluno04n1 + aluno04n2 + aluno04n3) / 3
+
 	// c. Em sua função main imprima:
 	// c.1- "Os alunos da turma são:"
 	fmt.Println()
@@ -67,36 +63,47 @@ func main() {
 	fmt.Println()
 
 	// c.3- Chame uma nova função chamada media
-	media01 := (aluno01n1 + aluno01n2 + aluno01n3) / 3
-	media02 := (aluno02n1 + aluno02n2 + aluno02n3) / 3
-	media03 := (aluno03n1 + aluno03n2 + aluno03n3) / 3
-	media04 := (aluno04n1 + aluno04n2 + aluno04n3) / 3
+	media()
+	diplomas()
+	reprovados()
+
+}
+
+func media() {
 
 	// d. a função media deverá imprimir:
 	// d.1- A média final de cada aluno indicando o nome do mesmo;
-	fmt.Println("Aluno-1: ", aluno01, "media: ", media01)
-	fmt.Println("Aluno-2: ", aluno02, "media: ", media02)
-	fmt.Println("Aluno-3: ", aluno03, "media: ", media03)
-	fmt.Println("Aluno-4: ", aluno04, "media: ", media04)
-	fmt.Println()
-
 	// d.2- Um resultado booleano que represente "true" para cada aluno que foi aprovado (cuja média seja igual ou maior a 7.0)
-	m1 = (media01 >= 7)
-	m2 = (media02 >= 7)
-	m3 = (media03 >= 7)
-	m4 = (media04 >= 7)
+	fmt.Println("Aluno-1: ", aluno01, "media: ", media01)
+	fmt.Println("A média do Aluno-1", aluno01, "foi", math.Round(media01*100)/100)
+	fmt.Println("Aluno-1: ", aluno01, "ficou acima da média?", media01 >= 7)
 
+	fmt.Println("Aluno-2: ", aluno02, "media: ", media02)
+	fmt.Println("A média do Aluno-2", aluno02, "foi", math.Round(media02*100)/100)
+	fmt.Println("Aluno-1: ", aluno02, "ficou acima da média?", media02 >= 7)
+
+	fmt.Println("Aluno-3: ", aluno03, "media: ", media03)
+	fmt.Println("A média do Aluno-3", aluno03, "foi", math.Round(media03*100)/100)
+	fmt.Println("Aluno-1: ", aluno03, "ficou acima da média?", media03 >= 7)
+
+	fmt.Println("Aluno-4: ", aluno04, "media: ", media04)
+	fmt.Println("A média do Aluno-4", aluno04, "foi", math.Round(media04*100)/100)
+	fmt.Println("Aluno-1: ", aluno04, "ficou acima da média?", media04 >= 7)
+
+}
+
+func diplomas() {
 	// e. Crie uma nova função chamada diplomas
 	// e.1- A função main deverá chamar também a função diplomas.
 	// e.2- A função diplomas irá imprimir a seguinte linha para cada aluno que foi aprovado:
 	// "Parabéns pela sua aprovação. Seu diploma estará disponível na próxima semana <NOME>."
 	//diplomas =
-	fmt.Println("Parabéns pela sua aprovação. Seu diploma estará disponível na próxima semana,", aluno01, (m1 == true))
-	fmt.Println("Parabéns pela sua aprovação. Seu diploma estará disponível na próxima semana,", aluno02, (m2 == true))
-	fmt.Println("Parabéns pela sua aprovação. Seu diploma estará disponível na próxima semana,", aluno03, (m3 == true))
-	fmt.Println("Parabéns pela sua aprovação. Seu diploma estará disponível na próxima semana,", aluno04, (m4 == true))
-	fmt.Println()
+	fmt.Println("Parabéns pela sua aprovação. Seu diploma estará disponível na próxima semana,", aluno03)
+	fmt.Println("Parabéns pela sua aprovação. Seu diploma estará disponível na próxima semana,", aluno04)
 
+}
+
+func reprovados() {
 	// f. Crie uma função chamada reprovados.
 	// f.1- A função main também deverá chamar a função reprovados
 	// f.2- A função reprovados deverá imprimir o seguinte para cada aluno que foi reprovado:
@@ -104,7 +111,5 @@ func main() {
 	//reprovados
 	fmt.Println("Não sabe, não sabe, vai ter que aprender.. orelha, de burro, cabeça de et. Brincadeirinha, mas melhor sorte na próxima,", aluno01)
 	fmt.Println("Não sabe, não sabe, vai ter que aprender.. orelha, de burro, cabeça de et. Brincadeirinha, mas melhor sorte na próxima,", aluno02)
-	fmt.Println("Não sabe, não sabe, vai ter que aprender.. orelha, de burro, cabeça de et. Brincadeirinha, mas melhor sorte na próxima,", aluno03)
-	fmt.Println("Não sabe, não sabe, vai ter que aprender.. orelha, de burro, cabeça de et. Brincadeirinha, mas melhor sorte na próxima,", aluno04)
 
 }
