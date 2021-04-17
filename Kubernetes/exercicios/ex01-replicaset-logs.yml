@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: logs-replicaset
+  labels:
+    app: berg-meuapp
+    type: logs
+spec:
+  template:
+    metadata:
+      name: logs-replicaset
+      labels:
+        app: berg-app
+        tipo: logs
+    spec:
+      containers:
+      - name: nginx-contaier
+        image: nginx
+  replicas: 6
+  selector:
+    matchLabels:
+      tipo: logs

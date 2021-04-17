@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: berg-app-pod
+  labels:
+    app: berg-app
+    tipo: berg-web
+    autor: berg
+spec:
+  containers:
+  - name: wernight-container
+    image: wernight
