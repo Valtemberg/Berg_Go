@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
   - name: redis
-    image: redis32
+    image: redis
   - name: nginx
     image: nginx
   - name: fluentd
