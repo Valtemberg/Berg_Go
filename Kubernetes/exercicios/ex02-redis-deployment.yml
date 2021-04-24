@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deployment
+  labels:
+    app: redis
+    type: cache
+spec:
+  template:
+    metadata:
+      name: redis-deployment
+      labels: 
+        app: redis
+        tipo: cache
+        time: infra
+    spec:
+      containers:
+      - name: nginx-containers
+        image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+     tipo: cache
